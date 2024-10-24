@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=11 format=3 uid="uid://dl128cri0wa1t"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/inventory_data.gd" id="1_cnfw8"]
+[ext_resource type="Resource" uid="uid://btvhoeetemnv" path="res://resources/items/rifle/rifle.tres" id="2_2lyjd"]
+[ext_resource type="Script" path="res://scripts/Inventory/slot/slot_data.gd" id="3_ajodu"]
+[ext_resource type="Resource" uid="uid://c5f6py8l78m5h" path="res://resources/items/ammo/ammo.tres" id="4_cmj37"]
+[ext_resource type="Resource" uid="uid://ck2sgoqlsnnmu" path="res://resources/items/health_potion/health_potion.tres" id="5_cnqhr"]
+[ext_resource type="Resource" uid="uid://dno2mk60i41bd" path="res://resources/items/iron_helm/iron_helm.tres" id="6_d3t76"]
+
+[sub_resource type="Resource" id="Resource_h0r3f"]
+script = ExtResource("3_ajodu")
+item_data = ExtResource("2_2lyjd")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_1kgsy"]
+script = ExtResource("3_ajodu")
+item_data = ExtResource("4_cmj37")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_0i68m"]
+script = ExtResource("3_ajodu")
+item_data = ExtResource("5_cnqhr")
+quantity = 4
+
+[sub_resource type="Resource" id="Resource_wciql"]
+script = ExtResource("3_ajodu")
+item_data = ExtResource("6_d3t76")
+quantity = 1
+
+[resource]
+script = ExtResource("1_cnfw8")
+slot_datas = Array[ExtResource("3_ajodu")]([SubResource("Resource_h0r3f"), null, SubResource("Resource_1kgsy"), null, null, SubResource("Resource_0i68m"), null, null, SubResource("Resource_wciql"), null, null, null, null, null, null, null, null, null, null, null])

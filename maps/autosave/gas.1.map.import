@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dekuvl4imgbtl"
+path="res://.godot/imported/gas.1.map-f675542794c4ea4c07528b21d7481972.tres"
+
+[deps]
+
+source_file="res://maps/autosave/gas.1.map"
+dest_files=["res://.godot/imported/gas.1.map-f675542794c4ea4c07528b21d7481972.tres"]
+
+[params]
+

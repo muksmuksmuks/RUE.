@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c5f6py8l78m5h"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/item/item_data.gd" id="1_p12kl"]
+[ext_resource type="Texture2D" uid="uid://brsx80bhcj62f" path="res://resources/items/ammo/photo_2024-05-10_00-50-39.jpg" id="2_htkgq"]
+
+[resource]
+script = ExtResource("1_p12kl")
+name = "Ammo"
+description = "Ammo for rifle."
+stackable = true
+texture = ExtResource("2_htkgq")

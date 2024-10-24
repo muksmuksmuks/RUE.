@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://btvhoeetemnv"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/item/item_data.gd" id="1_d88c7"]
+[ext_resource type="Texture2D" uid="uid://ds45i1pjjkrvx" path="res://resources/items/rifle/49cd8635afe97a58fbc497413f061986.jpg" id="2_7nwrd"]
+
+[resource]
+script = ExtResource("1_d88c7")
+name = "Rifle"
+description = "30 ammo. 12 dmg."
+stackable = false
+texture = ExtResource("2_7nwrd")

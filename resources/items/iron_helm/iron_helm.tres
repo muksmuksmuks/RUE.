@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDataEquip" load_steps=3 format=3 uid="uid://dno2mk60i41bd"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/item/item_data_equip.gd" id="1_el3ef"]
+[ext_resource type="Texture2D" uid="uid://cv1kp7rpxb6fr" path="res://assets/pictures/icons/c443cb66a6dd1d4f9d89df42e820fe11.jpg" id="2_emmr2"]
+
+[resource]
+script = ExtResource("1_el3ef")
+defence = 1
+name = "Iron Helm"
+description = "Protect"
+stackable = false
+texture = ExtResource("2_emmr2")

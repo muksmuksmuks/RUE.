@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqirejtcxlahw"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/inventory.gd" id="1_3joym"]
+[ext_resource type="Theme" uid="uid://2mc6krbox3lb" path="res://assets/themes/MinimalUI.tres" id="1_8v3de"]
+[ext_resource type="Texture2D" uid="uid://dyf5jv032ms3w" path="res://assets/pictures/icons/photo_2024-08-06_16-51-13.jpg" id="2_upsb3"]
+
+[node name="Inventory" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_8v3de")
+script = ExtResource("1_3joym")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_upsb3")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ItemGrid" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 5

@@ -1,0 +1,137 @@
+[gd_scene load_steps=22 format=3 uid="uid://bshvx6b5q8wek"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_56h8b"]
+[ext_resource type="Texture2D" uid="uid://desyn5d654sdp" path="res://assets/textures/Chest_drawers_01_11_baseColor.jpeg" id="1_cfx1a"]
+[ext_resource type="Texture2D" uid="uid://722xmeab8kwh" path="res://assets/textures/grass_lowres.png" id="1_rv6ne"]
+[ext_resource type="Texture2D" uid="uid://kp62xrxb6pkp" path="res://assets/textures/wood-floor-compressed.png" id="3_xtgw5"]
+[ext_resource type="PackedScene" uid="uid://bqirejtcxlahw" path="res://resources/inventory/inventory.tscn" id="5_ufncb"]
+[ext_resource type="Script" path="res://resources/inventory/inventory_interface.gd" id="6_jae1w"]
+[ext_resource type="PackedScene" uid="uid://m8214kf0hj4f" path="res://player/player.tscn" id="7_qrqg6"]
+[ext_resource type="PackedScene" uid="uid://dy7w1gu2rlxpo" path="res://resources/inventory/slot.tscn" id="8_ytgby"]
+[ext_resource type="PackedScene" uid="uid://bj1wy6r4dwcbb" path="res://interactable/chest.tscn" id="9_h0sw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kmjh"]
+albedo_texture = ExtResource("1_cfx1a")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvjiu"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6uiiy"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uc8v"]
+albedo_texture = ExtResource("1_rv6ne")
+uv1_scale = Vector3(50, 50, 50)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e7k3q"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aq34u"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjr4p"]
+albedo_texture = ExtResource("3_xtgw5")
+uv1_scale = Vector3(100, 100, 100)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PrismMesh" id="PrismMesh_vqs6x"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r413t"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s78yd"]
+sky_top_color = Color(0.768627, 0.454902, 0.54902, 1)
+sky_horizon_color = Color(0.739695, 0.653805, 0.668672, 1)
+ground_bottom_color = Color(0.190153, 0.160318, 0.12567, 1)
+ground_horizon_color = Color(0.739695, 0.653805, 0.668672, 1)
+
+[sub_resource type="Sky" id="Sky_tg3hu"]
+sky_material = SubResource("ProceduralSkyMaterial_s78yd")
+
+[sub_resource type="Environment" id="Environment_snmjt"]
+background_mode = 2
+sky = SubResource("Sky_tg3hu")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="test" type="Node"]
+script = ExtResource("1_56h8b")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -24.9715, 5, -29.6521)
+material_override = SubResource("StandardMaterial3D_4kmjh")
+mesh = SubResource("BoxMesh_qvjiu")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6uiiy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5uc8v")
+mesh = SubResource("PlaneMesh_e7k3q")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_aq34u")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-1.31134e-06, -30, 0, 30, -1.31134e-06, 0, 0, 0, 30, 20, 0, -7)
+material_override = SubResource("StandardMaterial3D_vjr4p")
+mesh = SubResource("PrismMesh_vqs6x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r413t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_snmjt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.988228, -0.0751013, 0.133283, 0, 0.871214, 0.490904, -0.152986, 0.485125, -0.860958, 0, 0, 0)
+light_color = Color(1, 0.643137, 0.458824, 1)
+shadow_enabled = true
+
+[node name="girl" parent="." instance=ExtResource("7_qrqg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6207, -2.86102e-06, -4.90026)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_jae1w")
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("5_ufncb")]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("8_ytgby")]
+visible = false
+modulate = Color(1, 1, 1, 0.490196)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Chest" parent="." instance=ExtResource("9_h0sw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -14)

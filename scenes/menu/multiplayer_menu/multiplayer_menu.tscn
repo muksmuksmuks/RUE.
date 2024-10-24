@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1lvs415q0xx2"]
+
+[ext_resource type="Theme" uid="uid://2mc6krbox3lb" path="res://assets/themes/MinimalUI.tres" id="1_2f6r1"]
+[ext_resource type="Script" path="res://scenes/menu/multiplayer_menu/multiplayer_menu.gd" id="1_qbjrm"]
+[ext_resource type="PackedScene" uid="uid://m8214kf0hj4f" path="res://player/player.tscn" id="2_hvogu"]
+
+[node name="multiplayer_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qbjrm")
+player_scene = ExtResource("2_hvogu")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2f6r1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -235.0
+offset_right = 485.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_2f6r1")
+
+[node name="host" type="Button" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = " host"
+alignment = 0
+
+[node name="join" type="Button" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = " join"
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="x" type="Button" parent="Panel2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "     x     "
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player/player.tscn")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="Panel2/MarginContainer/VBoxContainer/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Panel2/MarginContainer/VBoxContainer/join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Panel2/MarginContainer/x" to="." method="_on_x_pressed"]

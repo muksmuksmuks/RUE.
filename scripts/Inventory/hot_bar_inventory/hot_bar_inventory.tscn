@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://rupjfxmp3a8n"]
+
+[ext_resource type="Script" path="res://scripts/Inventory/hot_bar_inventory/hot_bar_inventory.gd" id="1_apwd1"]
+[ext_resource type="Theme" uid="uid://2mc6krbox3lb" path="res://assets/themes/MinimalUI.tres" id="1_caxac"]
+[ext_resource type="Texture2D" uid="uid://bcnj135l7vd0y" path="res://assets/pictures/3e12384624fc60096868957a680f2d039d0515.jpg" id="3_4rsoq"]
+
+[node name="HotBarInventory" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_caxac")
+script = ExtResource("1_apwd1")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_4rsoq")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2

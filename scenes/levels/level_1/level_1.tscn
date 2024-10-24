@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://kv5s7wtbg8y6"]
+
+[ext_resource type="Script" path="res://scenes/levels/main/main.gd" id="1_6dyj7"]
+[ext_resource type="PackedScene" uid="uid://cfcwdydtevsvw" path="res://assets/pre-loads/district/district.tscn" id="2_0lc3t"]
+[ext_resource type="Shader" path="res://assets/shaders/psx_dither.gdshader" id="3_lv0n1"]
+[ext_resource type="PackedScene" uid="uid://m8214kf0hj4f" path="res://player/player.tscn" id="4_nn2h7"]
+[ext_resource type="Script" path="res://scripts/Inventory/inventory_data_equip.gd" id="5_xg45o"]
+[ext_resource type="Script" path="res://scripts/Inventory/slot/slot_data.gd" id="6_l8qkf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l2myg"]
+sky_top_color = Color(0.768627, 0.454902, 0.54902, 1)
+sky_horizon_color = Color(0.739695, 0.653805, 0.668673, 1)
+ground_bottom_color = Color(0.190153, 0.160318, 0.12567, 1)
+ground_horizon_color = Color(0.739695, 0.653805, 0.668673, 1)
+
+[sub_resource type="Sky" id="Sky_i2k2s"]
+sky_material = SubResource("ProceduralSkyMaterial_l2myg")
+
+[sub_resource type="Environment" id="Environment_tyj3r"]
+background_mode = 2
+sky = SubResource("Sky_i2k2s")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71ukm"]
+shader = ExtResource("3_lv0n1")
+shader_parameter/color_depth = 5
+shader_parameter/dithering = true
+shader_parameter/resolution_scale = 3
+
+[sub_resource type="Resource" id="Resource_cuc1u"]
+script = ExtResource("5_xg45o")
+slot_datas = Array[ExtResource("6_l8qkf")]([null, null, null, null, null])
+
+[node name="level_1" type="Node3D"]
+script = ExtResource("1_6dyj7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tyj3r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.245454, 0.43561, 0, 0.871214, 0.490904, -0.500003, 0.425134, -0.754492, 0, 0, 0)
+light_color = Color(1, 0.643137, 0.458824, 1)
+shadow_enabled = true
+
+[node name="District" parent="." instance=ExtResource("2_0lc3t")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_71ukm")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="player" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_nn2h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6207, 0.00483704, 23.4944)
+equip_inventory_data = SubResource("Resource_cuc1u")

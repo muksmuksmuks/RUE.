@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bscro4odifiqd"
+path="res://.godot/imported/gas.map-310885a98aa7a80eafc627389b213c63.tres"
+
+[deps]
+
+source_file="res://maps/gas.map"
+dest_files=["res://.godot/imported/gas.map-310885a98aa7a80eafc627389b213c63.tres"]
+
+[params]
+
